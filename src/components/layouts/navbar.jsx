@@ -1,15 +1,5 @@
-import { CircleUser, Menu, Package2, Search } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
+import { CircleUser, Menu, Package2, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,9 +7,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+} from "@/components/ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Outlet } from "react-router-dom";
 
 function SharedLayout() {
@@ -31,14 +20,38 @@ function SharedLayout() {
             href="#"
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
-            <Package2 className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+            <img src="/images/logo-placeholder.png" alt="Logo" className="h-6 w-6" />
+            <span className="sr-only">SaaS Startup</span>
           </a>
           <a
-            href="#"
+            href="#home"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Home
+          </a>
+          <a
+            href="#features"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Features
+          </a>
+          <a
+            href="#pricing"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Pricing
+          </a>
+          <a
+            href="#about"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            About Us
+          </a>
+          <a
+            href="#contact"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Contact
           </a>
         </nav>
         <Sheet>
@@ -58,19 +71,46 @@ function SharedLayout() {
                 href="#"
                 className="flex items-center gap-2 text-lg font-semibold"
               >
-                <Package2 className="h-6 w-6" />
-                <span className="sr-only">Acme Inc</span>
+                <img src="/images/logo-placeholder.png" alt="Logo" className="h-6 w-6" />
+                <span className="sr-only">SaaS Startup</span>
               </a>
               <a
-                href="#"
+                href="#home"
                 className="text-muted-foreground hover:text-foreground"
               >
                 Home
+              </a>
+              <a
+                href="#features"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Features
+              </a>
+              <a
+                href="#pricing"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Pricing
+              </a>
+              <a
+                href="#about"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                About Us
+              </a>
+              <a
+                href="#contact"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Contact
               </a>
             </nav>
           </SheetContent>
         </Sheet>
         <div className="flex items-center gap-4 md:gap-2 lg:gap-4">
+          <Button variant="primary" className="ml-auto">
+            Get Started
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="secondary" size="icon" className="rounded-full">
@@ -89,11 +129,11 @@ function SharedLayout() {
           </DropdownMenu>
         </div>
       </header>
-      <main className="flex-grow p-4 overflow-auto">
+      <main className="flex-grow p-4 overflow-auto bg-gray-50">
         <Outlet />
       </main>
     </div>
-  )
+  );
 }
 
 export default SharedLayout;
